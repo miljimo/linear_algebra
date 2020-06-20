@@ -1,5 +1,5 @@
-from matrix4f import Matrix4f;
-from vector3f import Vector3f;
+from linear_algebra.matrix4f import Matrix4f;
+from linear_algebra.vector3f import Vector3f;
 
 
 class Transform3D(object):
