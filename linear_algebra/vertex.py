@@ -1,5 +1,5 @@
-from vector3f import Vector3f;
-from vector2f import Vector2f;
+from linear_algebra.vector3f import Vector3f;
+from linear_algebra.vector2f import Vector2f;
 
 class Vertex(object):
 
@@ -38,7 +38,6 @@ class Vertex(object):
         if(isinstance(coord, Vector2f) != True):
             raise TypeError("Expecting a Vector2f object ");
         self.__Coord = coord;
-
 
 
 if(__name__=="__main__"):
