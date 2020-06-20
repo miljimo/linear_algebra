@@ -31,14 +31,8 @@ class Vector2f(object):
 
     @property
     def Normalise(self):
-     x  = 0;
-     y  = 0;
-     if(self.X !=0):
-         x = self.X / self.Length;
-     if(self.Y  != 0):
-         y = self.Y / self.Length;
-     self.X  = x;
-     self.Y  = y;
+     self.X  = self.X / self.Length;
+     self.Y  = self.Y / self.Length;
      return self;
 
     def __add__(self, other):

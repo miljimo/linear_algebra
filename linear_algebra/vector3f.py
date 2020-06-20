@@ -1,4 +1,5 @@
 import math;
+from linear_algebra.vector2f import Vector2f
 
 class Vector3f(object):
 
@@ -44,7 +45,7 @@ class Vector3f(object):
     def Normalise(self):
         if(self.Length == 0):
             return Vector3f(0,0,0);
-        return Vector3f(self.X / self.Length, self.Y / self.Length, self.Z / self.Y);
+        return Vector3f(self.X / self.Length, self.Y / self.Length, self.Z / self.Length);
 
     def __str__(self):
         return "({0},{1},{2})".format(self.X, self.Y, self.Z);
@@ -105,6 +106,16 @@ class Vector3f(object):
                 status = True;
         return status;
 
+
+    @property
+    def Vector2f(self):
+        
+        if(self.Z == 0):
+            zpos  =  1;
+        else:
+             zpos = self.Z;
+        return Vector2f(self.X/zpos, self.Y/zpos);
+
    
     @staticmethod
     def Unit():
@@ -113,6 +124,21 @@ class Vector3f(object):
 
 
 if(__name__ == "__main__"):
+
+    def Cude():
+          points  =     [ Vector3f (0, 0, 0),
+			Vector3f (1, 0, 0),
+			Vector3f (1, 1, 0),
+			Vector3f (0, 1, 0),
+			Vector3f (0, 1, 1),
+			Vector3f (1, 1, 1),
+			Vector3f (1, 0, 1),
+			Vector3f (0, 0, 1)]
+
+          for p in points:
+            p = p.Normalise
+          return points;
+          
     position  = Vector3f(10,2, 3);
     print(position + Vector3f(0,1, 0) + Vector3f(12,4,10));
     print(position.Length);
@@ -126,6 +152,10 @@ if(__name__ == "__main__"):
     print(pos.Cross(position));
     print(pos  == pos);
     print(Vector3f.Unit());
+
+    points  =  Cude();
+    for p in points:
+        print("3D = {0} to 2D = {1}".format(p, p.Vector2f));
   
     
     

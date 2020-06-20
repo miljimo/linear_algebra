@@ -1,5 +1,5 @@
 import math;
-from vector3f import Vector3f;
+from linear_algebra.vector3f import Vector3f;
 
 
 class Quaternion(Vector3f):
